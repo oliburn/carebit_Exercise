@@ -25,6 +25,8 @@ Depends on the amount of the data and the performance we want. In this case I wo
 
 #### Grouping by week number:
 
+We only need to change MONTH into WEEK function:
+
 SELECT
 WEEK(order_date) AS week,
 ROUND(SUM(CASE WHEN product_name = 'Ipad pro' THEN total_amount ELSE 0 END),0) AS Ipad_pro_total,
