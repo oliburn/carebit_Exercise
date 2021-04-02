@@ -4,20 +4,13 @@
 
 ### -Describe, using SQL statements, how you would transform Table A into Table B. 
 
-SELECT
-
-MONTH(order_date) AS month,
-
-ROUND(SUM(CASE WHEN product_name = 'Ipad pro' THEN total_amount ELSE 0 END),0) AS Ipad_pro_total,
-
-ROUND(SUM(CASE WHEN product_name = 'Iphone Xs' THEN total_amount ELSE 0 END),0) AS Iphone_xs_total,
-
-ROUND(SUM(CASE WHEN product_name NOT IN ('Ipad pro', 'Iphone Xs') THEN total_amount ELSE 0 END),0) AS other_total
-
-FROM sales
-
-GROUP BY MONTH(order_date)
-
+SELECT <br>
+MONTH(order_date) AS month, <br>
+ROUND(SUM(CASE WHEN product_name = 'Ipad pro' THEN total_amount ELSE 0 END),0) AS Ipad_pro_total, <br>
+ROUND(SUM(CASE WHEN product_name = 'Iphone Xs' THEN total_amount ELSE 0 END),0) AS Iphone_xs_total, <br>
+ROUND(SUM(CASE WHEN product_name NOT IN ('Ipad pro', 'Iphone Xs') THEN total_amount ELSE 0 END),0) AS other_total <br>
+FROM sales <br>
+GROUP BY MONTH(order_date) <br>
 ORDER BY MONTH(order_date);
 
 ### -Would you use materialized tables or SQL Views? 
